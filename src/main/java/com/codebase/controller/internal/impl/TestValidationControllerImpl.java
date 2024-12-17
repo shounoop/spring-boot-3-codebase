@@ -1,6 +1,6 @@
 package com.codebase.controller.internal.impl;
 
-import com.codebase.component.response.ApiRespFactory;
+import com.codebase.component.response.ApiResponseFactory;
 import com.codebase.controller.internal.interfaces.TestValidationController;
 import com.codebase.model.request.TestValidationRequest;
 import com.codebase.model.response.ApiResponse;
@@ -23,7 +23,7 @@ import java.util.Set;
 public class TestValidationControllerImpl implements TestValidationController {
 //    private final Validator validator;
 
-    private final ApiRespFactory apiRespFactory;
+    private final ApiResponseFactory apiResponseFactory;
 
     @Override
     public ResponseEntity<ApiResponse> testing(TestValidationRequest request) {
@@ -60,6 +60,6 @@ public class TestValidationControllerImpl implements TestValidationController {
             }
         }
 
-        return apiRespFactory.success(res);
+        return apiResponseFactory.success(res);
     }
 }

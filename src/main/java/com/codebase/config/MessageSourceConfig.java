@@ -1,12 +1,12 @@
 package com.codebase.config;
 
-import com.codebase.constant.LocalizationConstants;
+import com.codebase.constants.LocalizationConstants;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
 
 @Configuration
-public class MessageSourceConfiguration {
+public class MessageSourceConfig {
 
     @Bean
     public ResourceBundleMessageSource messageSource() {

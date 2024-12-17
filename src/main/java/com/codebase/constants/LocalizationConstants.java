@@ -1,4 +1,4 @@
-package com.codebase.constant;
+package com.codebase.constants;
 
 public class LocalizationConstants {
 

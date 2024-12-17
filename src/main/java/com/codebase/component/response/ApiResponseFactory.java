@@ -29,7 +29,7 @@ import static com.codebase.enums.DomainCode.SUCCESS;
 
 @Component
 @RequiredArgsConstructor
-public class ApiRespFactory {
+public class ApiResponseFactory {
 
     private final MessageSource messageSource;
 

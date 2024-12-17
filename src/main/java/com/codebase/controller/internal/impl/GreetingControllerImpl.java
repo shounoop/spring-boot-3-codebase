@@ -1,6 +1,6 @@
 package com.codebase.controller.internal.impl;
 
-import com.codebase.component.response.ApiRespFactory;
+import com.codebase.component.response.ApiResponseFactory;
 import com.codebase.controller.internal.interfaces.GreetingController;
 import com.codebase.model.response.ApiResponse;
 import lombok.RequiredArgsConstructor;
@@ -15,13 +15,13 @@ import java.util.Locale;
 @RequiredArgsConstructor
 public class GreetingControllerImpl implements GreetingController {
 
-    private final ApiRespFactory apiRespFactory;
+    private final ApiResponseFactory apiResponseFactory;
 
     @Autowired
     private MessageSource messageSource;
 
     @Override
     public ResponseEntity<ApiResponse> getGreeting(Locale locale) {
-        return apiRespFactory.success(messageSource.getMessage("greeting", null, locale));
+        return apiResponseFactory.success(messageSource.getMessage("greeting", null, locale));
     }
 }

@@ -1,6 +1,6 @@
 package com.codebase.config;
 
-import com.codebase.constant.LocalizationConstants;
+import com.codebase.constants.LocalizationConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +10,7 @@ import java.util.Locale;
 
 @Slf4j
 @Configuration
-public class LocaleConfiguration {
+public class LocaleConfig {
 
     @Bean
     public AcceptHeaderLocaleResolver localeResolver() {

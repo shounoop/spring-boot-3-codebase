@@ -1,6 +1,5 @@
 package com.codebase.service.interfaces;
 
-import org.springframework.stereotype.Service;
 import com.codebase.model.entity.Department;
 
 import java.util.List;

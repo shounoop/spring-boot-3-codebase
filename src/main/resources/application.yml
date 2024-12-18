@@ -7,3 +7,24 @@ spring:
     username: root
     password: 123123
     driver-class-name: com.mysql.cj.jdbc.Driver
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    operations-sorter: method
+    filter: true
+    try-it-out-enabled: true
+    tags-sorter: alpha
+  packages-to-scan: com.codebase.controller
+logging:
+  level:
+    org:
+      springdoc: info
+      springframework: info
+app:
+  openapi:
+    dev-url: http://localhost:8080
+    prod-url: http://localhost:8080

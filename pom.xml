@@ -27,6 +27,7 @@
         <jakarta.validation.version>3.1.0</jakarta.validation.version>
         <hibernate-validator.version>7.0.2.Final</hibernate-validator.version>
         <springdoc-openapi-starter-webmvc-ui.version>2.7.0</springdoc-openapi-starter-webmvc-ui.version>
+        <sonar-maven-plugin.version>5.0.0.4389</sonar-maven-plugin.version>
     </properties>
 
     <!-- Dependencies -->
@@ -89,6 +90,12 @@
             <version>${springdoc-openapi-starter-webmvc-ui.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>${sonar-maven-plugin.version}</version>
+        </dependency>
+
     </dependencies>
 
     <!-- Build Plugins -->
@@ -116,6 +123,12 @@
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>${sonar-maven-plugin.version}</version> <!-- Replace with the latest version -->
             </plugin>
         </plugins>
     </build>

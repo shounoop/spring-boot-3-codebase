@@ -1,0 +1,108 @@
+version: '3.8'
+
+services:
+  # Spring Boot Application Service
+  spring-boot-app:
+    image: codebase-spring-boot-app-image # Replace with your built Spring Boot Docker image
+    build:
+      context: . # Adjust the context if your Dockerfile is in a different location
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" # Map the container's port 8080 to the host
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/test_codebase # Database connection URL
+      SPRING_DATASOURCE_USERNAME: ${DB_USER:-root} # MySQL username (use environment variable)
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASS:-123123} # MySQL password (use environment variable)
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: com.mysql.cj.jdbc.Driver # JDBC driver class name
+    depends_on:
+      mysql:
+        condition: service_healthy # Ensures MySQL is healthy before starting the application
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/actuator/health || exit 1"] # Health check endpoint
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # MySQL Database Service
+  mysql:
+    image: mysql:8.0 # Specify the MySQL version you want to use
+    container_name: mysql
+    ports:
+      - "3306:3306" # Map the container's port 3306 to the host
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASS:-123123} # Root password for MySQL (use environment variable)
+      MYSQL_DATABASE: test_codebase # Name of the database to create
+    volumes:
+      - mysql-data:/var/lib/mysql # Persist MySQL data
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost --silent"] # Check if MySQL is ready
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # SonarQube Service
+  sonarqube:
+    image: sonarqube:community # SonarQube community edition image
+    hostname: sonarqube
+    container_name: sonarqube
+    read_only: true # Runs the container in read-only mode
+    depends_on:
+      db:
+        condition: service_healthy # Waits for the database to be healthy before starting SonarQube
+    environment:
+      SONAR_JDBC_URL: jdbc:postgresql://db:5432/sonar # Database connection URL for SonarQube
+      SONAR_JDBC_USERNAME: ${SONAR_DB_USER:-sonar} # PostgreSQL username for SonarQube
+      SONAR_JDBC_PASSWORD: ${SONAR_DB_PASS:-sonar} # PostgreSQL password for SonarQube
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data # Persist SonarQube data
+      - sonarqube_extensions:/opt/sonarqube/extensions # Persist SonarQube extensions
+      - sonarqube_logs:/opt/sonarqube/logs # Persist SonarQube logs
+      - sonarqube_temp:/opt/sonarqube/temp # Temporary files for SonarQube
+    ports:
+      - "9000:9000" # Map the container's port 9000 to the host
+    networks:
+      - ${NETWORK_TYPE:-ipv4} # Use the network type specified in the environment variable
+
+  # PostgreSQL Database Service for SonarQube
+  db:
+    image: postgres:15 # Specify the PostgreSQL version you want to use
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready" ] # Checks if PostgreSQL is ready
+      interval: 10s # Time between health check attempts
+      timeout: 5s # Health check timeout
+      retries: 5 # Number of retries before marking as unhealthy
+    hostname: postgresql
+    container_name: postgresql
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-sonar} # PostgreSQL username
+      POSTGRES_PASSWORD: ${POSTGRES_PASS:-sonar} # PostgreSQL password
+      POSTGRES_DB: ${POSTGRES_DB:-sonar} # Name of the database to create
+    volumes:
+      - postgresql:/var/lib/postgresql # Persist PostgreSQL data
+      - postgresql_data:/var/lib/postgresql/data # Persist PostgreSQL configuration and data files
+    networks:
+      - ${NETWORK_TYPE:-ipv4} # Use the network type specified in the environment variable
+
+volumes:
+  mysql-data:
+    driver: local
+  sonarqube_data:
+  sonarqube_temp:
+  sonarqube_extensions:
+  sonarqube_logs:
+  postgresql:
+  postgresql_data:
+
+networks:
+  ipv4:
+    driver: bridge
+    enable_ipv6: false
+  dual:
+    driver: bridge
+    enable_ipv6: true
+    ipam:
+      config:
+        - subnet: "192.168.2.0/24"
+          gateway: "192.168.2.1"
+        - subnet: "2001:db8:2::/64"
+          gateway: "2001:db8:2::1"

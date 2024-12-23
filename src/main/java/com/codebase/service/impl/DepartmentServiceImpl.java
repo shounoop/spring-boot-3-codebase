@@ -8,6 +8,7 @@ import com.codebase.service.interfaces.DepartmentService;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -21,12 +22,19 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public List<Department> fetchDepartmentList() {
-        return (List<Department>) departmentRepository.findAll();
+        return departmentRepository.findAll();
     }
 
     @Override
     public Department updateDepartment(Department department, Long departmentId) {
-        Department depDB = departmentRepository.findById(departmentId).get();
+        Optional<Department> optionalDepartment = departmentRepository.findById(departmentId);
+
+        if (optionalDepartment.isEmpty()) {
+            // todo: throw new exception
+            return null;
+        }
+
+        Department depDB = optionalDepartment.get();
 
         if (Objects.nonNull(department.getDepartmentName()) && !"".equalsIgnoreCase(department.getDepartmentName())) {
             depDB.setDepartmentName(department.getDepartmentName());

@@ -1,7 +1,10 @@
 spring:
   profiles:
     active: dev # Set the default active profile (can be overridden)
-
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 2MB
 springdoc:
   api-docs:
     path: /v3/api-docs

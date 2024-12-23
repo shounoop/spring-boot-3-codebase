@@ -1,11 +1,10 @@
 package com.codebase.model.mapper;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-
 import com.codebase.model.dto.LombokDestination;
 import com.codebase.model.dto.SimpleDestination;
 import com.codebase.model.dto.SimpleSource;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
 
 public class LombokMapperUnitTest {

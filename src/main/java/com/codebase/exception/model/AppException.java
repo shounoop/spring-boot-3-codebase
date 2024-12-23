@@ -1,4 +1,4 @@
-package com.codebase.model.exception;
+package com.codebase.exception.model;
 
 import com.codebase.enums.DomainCode;
 import lombok.Getter;

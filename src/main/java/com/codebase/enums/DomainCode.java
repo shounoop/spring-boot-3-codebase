@@ -14,6 +14,7 @@ public enum DomainCode {
     NO_PERMISSION("TD-005", "No permission", HttpStatus.FORBIDDEN.value()),
     DEPLOY_CAMUNDA_FAIL("TD-006", "Deploy camunda fail", HttpStatus.INTERNAL_SERVER_ERROR.value()),
     CONFLICT_ERROR("TD-016", "The resource was modified by another transaction", HttpStatus.CONFLICT.value()),
+    EXPECTATION_FAILED("TD-017", "EXPECTATION_FAILED", HttpStatus.EXPECTATION_FAILED.value()),
     ;
 
     private final String code;

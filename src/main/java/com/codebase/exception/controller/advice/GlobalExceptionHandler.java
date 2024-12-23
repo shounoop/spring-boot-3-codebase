@@ -1,4 +1,4 @@
-package com.codebase.controller.advice.exception;
+package com.codebase.exception.controller.advice;
 
 import com.codebase.component.response.ApiResponseFactory;
 import com.codebase.model.response.ApiResponse;

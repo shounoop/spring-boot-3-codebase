@@ -2,7 +2,7 @@ package com.codebase.component.response;
 
 import com.codebase.enums.DomainCode;
 import com.codebase.model.dto.FieldErrorDto;
-import com.codebase.model.exception.AppException;
+import com.codebase.exception.model.AppException;
 import com.codebase.model.response.ApiResponse;
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import io.micrometer.common.util.StringUtils;

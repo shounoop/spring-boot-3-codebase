@@ -8,27 +8,27 @@ import org.springframework.http.HttpStatus;
 @Setter
 @Getter
 public class AppException extends RuntimeException {
-    private final DomainCode code;
+    private final DomainCode domainCode;
     private transient Object[] args;
     private HttpStatus status;
 
-    public AppException(DomainCode code) {
-        this.code = code;
+    public AppException(DomainCode domainCode) {
+        this.domainCode = domainCode;
     }
 
-    public AppException(DomainCode code, Object[] args) {
-        this.code = code;
+    public AppException(DomainCode domainCode, Object[] args) {
+        this.domainCode = domainCode;
         this.args = args;
     }
 
-    public AppException(HttpStatus status, DomainCode code, Object[] args) {
+    public AppException(HttpStatus status, DomainCode domainCode, Object[] args) {
         this.status = status;
-        this.code = code;
+        this.domainCode = domainCode;
         this.args = args;
     }
 
-    public AppException(HttpStatus status, DomainCode code) {
+    public AppException(HttpStatus status, DomainCode domainCode) {
         this.status = status;
-        this.code = code;
+        this.domainCode = domainCode;
     }
 }

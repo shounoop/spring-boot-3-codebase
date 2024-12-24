@@ -33,23 +33,16 @@ public class StudentControllerImpl implements StudentController {
 
     public ResponseEntity<ApiResponse> uploadFile(@RequestParam("file") MultipartFile file) {
         if (ExcelUtility.hasExcelFormat(file)) {
-            try {
-                stuService.importStudents(file);
-                String message = "The Excel file is uploaded: " + file.getOriginalFilename();
+            stuService.importStudents(file);
+            String message = "The Excel file is uploaded: " + file.getOriginalFilename();
 
-                return apiResponseFactory.success(message);
-            } catch (Exception exp) {
-                String message = "The Excel file is not upload: " + file.getOriginalFilename() + "!";
-                log.error(message);
-
-                return apiResponseFactory.failWithDomainException(new AppException(DomainCode.EXPECTATION_FAILED));
-            }
+            return apiResponseFactory.success(message);
         }
 
         String message = "Please upload an excel file!";
         log.error(message);
 
-        return apiResponseFactory.failWithBadInputParameter(new AppException(DomainCode.INVALID_PARAMETER));
+        throw new AppException(DomainCode.INVALID_PARAMETER);
     }
 
     public ResponseEntity<ApiResponse> getStudents() {

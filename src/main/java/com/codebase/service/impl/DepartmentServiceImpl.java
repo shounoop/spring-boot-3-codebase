@@ -1,10 +1,12 @@
 package com.codebase.service.impl;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import com.codebase.enums.DomainCode;
+import com.codebase.exception.model.AppException;
 import com.codebase.model.entity.Department;
 import com.codebase.repository.DepartmentRepository;
 import com.codebase.service.interfaces.DepartmentService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
@@ -30,8 +32,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         Optional<Department> optionalDepartment = departmentRepository.findById(departmentId);
 
         if (optionalDepartment.isEmpty()) {
-            // todo: throw new exception
-            return null;
+            throw new AppException(DomainCode.INVALID_PARAMETER);
         }
 
         Department depDB = optionalDepartment.get();

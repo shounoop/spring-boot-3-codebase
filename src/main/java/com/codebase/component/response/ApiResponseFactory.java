@@ -35,9 +35,9 @@ public class ApiResponseFactory {
 
     public ResponseEntity<ApiResponse> failWithDomainException(AppException e) {
         ApiResponse apiResponse = new ApiResponse();
-        apiResponse.setCode(e.getCode().getCode());
-        apiResponse.setMessage(this.messageSource.getMessage(e.getCode().getCode(), e.getArgs(), this.locale()));
-        return ResponseEntity.status(e.getCode().getStatus()).body(apiResponse);
+        apiResponse.setCode(e.getDomainCode().getCode());
+        apiResponse.setMessage(this.messageSource.getMessage(e.getDomainCode().getCode(), e.getArgs(), this.locale()));
+        return ResponseEntity.status(e.getDomainCode().getStatus()).body(apiResponse);
     }
 
     public ResponseEntity<ApiResponse> success(Object data) {

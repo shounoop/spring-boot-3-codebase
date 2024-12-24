@@ -30,7 +30,7 @@ public class ExcelControllerImpl implements ExcelController {
 
             return apiResponseFactory.success(data);
         } catch (IOException e) {
-            return apiResponseFactory.failWithDomainException(new AppException(DomainCode.INVALID_PARAMETER));
+            throw new AppException(DomainCode.INVALID_PARAMETER);
         }
     }
 

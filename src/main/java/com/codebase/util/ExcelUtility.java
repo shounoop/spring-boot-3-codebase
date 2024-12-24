@@ -1,6 +1,7 @@
 package com.codebase.util;
 
 import com.codebase.model.dto.StudentDto;
+import lombok.experimental.UtilityClass;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -14,14 +15,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+@UtilityClass
 public class ExcelUtility {
 
     private static final String TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
     private static final String SHEET = "student";
-
-    private ExcelUtility() {
-        // Private constructor to prevent instantiation
-    }
 
     public static boolean hasExcelFormat(MultipartFile file) {
         return TYPE.equals(file.getContentType());

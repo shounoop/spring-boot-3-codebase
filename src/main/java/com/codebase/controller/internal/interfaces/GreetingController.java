@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Locale;
 
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/greeting")
 public interface GreetingController {
-    @GetMapping("/greeting")
+    @GetMapping("/")
     ResponseEntity<ApiResponse> getGreeting(Locale locale);
 }

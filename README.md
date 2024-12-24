@@ -60,3 +60,4 @@ docker-compose up -d
   - [SonarQube Introduction and Configuration with Spring Boot](https://medium.com/@salvipriya97/sonarqube-introduction-and-configuration-with-spring-boot-project-6fb92f4fe268)
   - [Integration of SonarQube with Spring Boot](https://www.geeksforgeeks.org/integration-of-sonarqube-with-springboot/)
 - [How to import data from Excel file in Spring Boot](https://springjava.com/spring-boot/how-to-import-data-from-excel-file-in-spring-boot)
+- [Export Data to Excel file in Spring Boot](https://springjava.com/spring-boot/export-data-to-excel-file-in-spring-boot)

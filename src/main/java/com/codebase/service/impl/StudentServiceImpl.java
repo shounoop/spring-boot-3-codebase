@@ -19,9 +19,10 @@ public class StudentServiceImpl implements StudentService {
     private final StudentRepository stuRepo;
 
     @Override
-    public void saveStudentsFromFile(MultipartFile file) {
+    public void importStudents(MultipartFile file) {
         try {
-            List<StudentDto> studentDtoList = ExcelUtility.excelToStuList(file.getInputStream());
+            List<StudentDto> studentDtoList = ExcelUtility.excelToStuList(file.getInputStream(), file.getOriginalFilename());
+
             stuRepo.saveAll(StudentMapper.INSTANCE.toEntityList(studentDtoList));
         } catch (IOException ex) {
             throw new RuntimeException("Excel data is failed to store: " + ex.getMessage());

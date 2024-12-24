@@ -2,6 +2,7 @@ package com.codebase.util;
 
 import com.codebase.model.dto.StudentDto;
 import lombok.experimental.UtilityClass;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -18,18 +19,20 @@ import java.util.List;
 @UtilityClass
 public class ExcelUtility {
 
-    private static final String TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-    private static final String SHEET = "student";
+    private static final String XLSX_TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+    private static final String XLS_TYPE = "application/vnd.ms-excel";
 
     public static boolean hasExcelFormat(MultipartFile file) {
-        return TYPE.equals(file.getContentType());
+        String contentType = file.getContentType();
+        return XLSX_TYPE.equals(contentType) || XLS_TYPE.equals(contentType);
     }
 
-    public static List<StudentDto> excelToStuList(InputStream is) {
-        try (Workbook workbook = new XSSFWorkbook(is)) {
-            Sheet sheet = workbook.getSheet(SHEET);
+    public static List<StudentDto> excelToStuList(InputStream is, String fileName) {
+        try (Workbook workbook = fileName.endsWith(".xlsx") ? new XSSFWorkbook(is) : new HSSFWorkbook(is)) {
+
+            Sheet sheet = workbook.getSheetAt(0);
             if (sheet == null) {
-                throw new IllegalArgumentException("Sheet named '" + SHEET + "' not found");
+                throw new IllegalArgumentException("Sheet named '" + sheet.getSheetName() + "' not found");
             }
 
             List<StudentDto> stuList = new ArrayList<>();
@@ -56,9 +59,9 @@ public class ExcelUtility {
 
         for (Cell cell : row) {
             switch (cell.getColumnIndex()) {
-                case 1 -> student.setStudentName(cell.getStringCellValue());
-                case 2 -> student.setEmail(cell.getStringCellValue());
-                case 3 -> student.setMobileNo(cell.getStringCellValue());
+                case 1 -> student.setStudentName(getCellValueAsString(cell));
+                case 2 -> student.setEmail(getCellValueAsString(cell));
+                case 3 -> student.setMobileNo(getCellValueAsString(cell));
                 default -> {
                     // Handle unexpected columns gracefully
                 }
@@ -66,5 +69,18 @@ public class ExcelUtility {
         }
 
         return student;
+    }
+
+    private static String getCellValueAsString(Cell cell) {
+        if (cell == null) {
+            return "";
+        }
+        return switch (cell.getCellType()) {
+            case STRING -> cell.getStringCellValue();
+            case NUMERIC -> String.valueOf(cell.getNumericCellValue());
+            case BOOLEAN -> String.valueOf(cell.getBooleanCellValue());
+            case FORMULA -> cell.getCellFormula();
+            default -> "";
+        };
     }
 }

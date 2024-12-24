@@ -6,7 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 public interface StudentService {
-    void saveStudentsFromFile(MultipartFile file);
+    void importStudents(MultipartFile file);
 
     List<StudentDto> findAll();
 }

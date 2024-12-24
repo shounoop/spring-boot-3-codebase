@@ -1,7 +1,10 @@
 package com.codebase.util;
 
+import com.codebase.enums.DomainCode;
+import com.codebase.exception.model.AppException;
 import com.codebase.model.dto.StudentDto;
 import lombok.experimental.UtilityClass;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -16,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+@Slf4j
 @UtilityClass
 public class ExcelUtility {
 
@@ -32,7 +36,8 @@ public class ExcelUtility {
 
             Sheet sheet = workbook.getSheetAt(0);
             if (sheet == null) {
-                throw new IllegalArgumentException("Sheet named '" + sheet.getSheetName() + "' not found");
+                log.error("Sheet named {} not found", sheet.getSheetName());
+                throw new AppException(DomainCode.INVALID_PARAMETER);
             }
 
             List<StudentDto> stuList = new ArrayList<>();
@@ -50,7 +55,9 @@ public class ExcelUtility {
             return stuList;
 
         } catch (IOException e) {
-            throw new RuntimeException("Failed to parse Excel file: " + e.getMessage(), e);
+            log.error("Failed to parse Excel file: {} exception: {}", e.getMessage(), e.toString());
+
+            throw new AppException(DomainCode.INTERNAL_SERVICE_ERROR);
         }
     }
 

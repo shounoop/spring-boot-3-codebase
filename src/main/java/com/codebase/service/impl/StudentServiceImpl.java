@@ -1,5 +1,7 @@
 package com.codebase.service.impl;
 
+import com.codebase.enums.DomainCode;
+import com.codebase.exception.model.AppException;
 import com.codebase.model.dto.StudentDto;
 import com.codebase.model.entity.Student;
 import com.codebase.model.mapper.StudentMapper;
@@ -25,7 +27,7 @@ public class StudentServiceImpl implements StudentService {
 
             stuRepo.saveAll(StudentMapper.INSTANCE.toEntityList(studentDtoList));
         } catch (IOException ex) {
-            throw new RuntimeException("Excel data is failed to store: " + ex.getMessage());
+            throw new AppException(DomainCode.INVALID_PARAMETER);
         }
     }
 

@@ -13,6 +13,7 @@ import java.io.IOException;
 
 @RequestMapping("/api/v1/student")
 public interface StudentController {
+
     @PostMapping("/excel/upload")
     ResponseEntity<ApiResponse> uploadFile(@RequestParam("file") MultipartFile file);
 

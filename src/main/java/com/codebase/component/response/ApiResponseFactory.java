@@ -69,6 +69,10 @@ public class ApiResponseFactory {
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
+    public ResponseEntity<ApiResponse> failWithInternalException(Exception e) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ApiResponse().withCode(DomainCode.INTERNAL_SERVICE_ERROR.getCode()).withMessage(messageSource.getMessage(INVALID_PARAMETER.getCode(), null, this.locale())).withFieldErrors(parseErrorData(e)));
+    }
+
     public ResponseEntity<ApiResponse> failWithBadInputParameter(Exception e) {
         Set<FieldErrorDto> fieldErrors = parseErrorData(e);
 

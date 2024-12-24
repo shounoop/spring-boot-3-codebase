@@ -59,13 +59,13 @@ public class ExcelGenerator {
         XSSFFont font = workbook.createFont();
         font.setFontHeight(14);
         style.setFont(font);
-        for (StudentDto record : students) {
+        for (StudentDto student : students) {
             Row row = sheet.createRow(rowCount++);
             int columnCount = 0;
-            createCell(row, columnCount++, record.getId(), style);
-            createCell(row, columnCount++, record.getStudentName(), style);
-            createCell(row, columnCount++, record.getEmail(), style);
-            createCell(row, columnCount++, record.getMobileNo(), style);
+            createCell(row, columnCount++, student.getId(), style);
+            createCell(row, columnCount++, student.getStudentName(), style);
+            createCell(row, columnCount++, student.getEmail(), style);
+            createCell(row, columnCount, student.getMobileNo(), style);
         }
     }
 

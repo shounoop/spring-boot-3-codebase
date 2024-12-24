@@ -23,7 +23,6 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/v1")
 public class StudentControllerImpl implements StudentController {
     private final StudentService stuService;
 

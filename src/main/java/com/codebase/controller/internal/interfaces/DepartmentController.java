@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/department")
 public interface DepartmentController {
-    @PostMapping("/departments")
+    @PostMapping("/create")
     ResponseEntity<ApiResponse> saveDepartment(@RequestBody Department department);
 
-    @GetMapping("/departments")
+    @GetMapping("/read")
     ResponseEntity<ApiResponse> fetchDepartmentList();
 
-    @PutMapping("/departments/{id}")
+    @PutMapping("/update/{id}")
     ResponseEntity<ApiResponse> updateDepartment(@RequestBody Department department, @PathVariable("id") Long departmentId);
 
-    @DeleteMapping("/departments/{id}")
+    @DeleteMapping("/delete/{id}")
     ResponseEntity<ApiResponse> deleteDepartmentById(@PathVariable("id") Long departmentId);
 }

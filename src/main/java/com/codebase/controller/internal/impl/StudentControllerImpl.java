@@ -1,12 +1,12 @@
 package com.codebase.controller.internal.impl;
 
-import com.codebase.ExcelGenerator;
 import com.codebase.component.response.ApiResponseFactory;
 import com.codebase.controller.internal.interfaces.StudentController;
 import com.codebase.enums.DomainCode;
 import com.codebase.exception.model.AppException;
 import com.codebase.model.dto.StudentDto;
 import com.codebase.model.response.ApiResponse;
+import com.codebase.service.interfaces.ExcelExportService;
 import com.codebase.service.interfaces.StudentService;
 import com.codebase.util.ExcelUtility;
 import jakarta.servlet.http.HttpServletResponse;
@@ -28,6 +28,7 @@ import java.util.List;
 @RestController
 public class StudentControllerImpl implements StudentController {
     private final StudentService stuService;
+    private final ExcelExportService excelExportService;
 
     private final ApiResponseFactory apiResponseFactory;
 
@@ -62,7 +63,6 @@ public class StudentControllerImpl implements StudentController {
         response.setHeader(headerKey, headerValue);
 
         List<StudentDto> students = stuService.findAll();
-        ExcelGenerator generator = new ExcelGenerator(students);
-        generator.generateExcelFile(response);
+        excelExportService.exportStudentToExcel(response, students);
     }
 }

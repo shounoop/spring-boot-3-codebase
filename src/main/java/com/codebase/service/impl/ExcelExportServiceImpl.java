@@ -1,6 +1,7 @@
-package com.codebase;
+package com.codebase.service.impl;
 
 import com.codebase.model.dto.StudentDto;
+import com.codebase.service.interfaces.ExcelExportService;
 import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServletResponse;
 import org.apache.poi.ss.usermodel.Cell;
@@ -9,22 +10,17 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
 
-public class ExcelGenerator {
+@Service
+public class ExcelExportServiceImpl implements ExcelExportService {
 
-    private final List<StudentDto> students;
-    private final XSSFWorkbook workbook;
     private XSSFSheet sheet;
 
-    public ExcelGenerator(List<StudentDto> students) {
-        this.students = students;
-        workbook = new XSSFWorkbook();
-    }
-
-    private void writeHeader() {
+    private void writeHeader(XSSFWorkbook workbook) {
         sheet = workbook.createSheet("Student");
         Row row = sheet.createRow(0);
         CellStyle style = workbook.createCellStyle();
@@ -53,7 +49,7 @@ public class ExcelGenerator {
         cell.setCellStyle(style);
     }
 
-    private void write() {
+    private void write(List<StudentDto> students, XSSFWorkbook workbook) {
         int rowCount = 1;
         CellStyle style = workbook.createCellStyle();
         XSSFFont font = workbook.createFont();
@@ -69,9 +65,11 @@ public class ExcelGenerator {
         }
     }
 
-    public void generateExcelFile(HttpServletResponse response) throws IOException {
-        writeHeader();
-        write();
+    public void exportStudentToExcel(HttpServletResponse response, List<StudentDto> students) throws IOException {
+        XSSFWorkbook workbook = new XSSFWorkbook();
+
+        writeHeader(workbook);
+        write(students, workbook);
         ServletOutputStream outputStream = response.getOutputStream();
         workbook.write(outputStream);
         workbook.close();

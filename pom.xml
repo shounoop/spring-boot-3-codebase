@@ -28,6 +28,8 @@
         <hibernate-validator.version>7.0.2.Final</hibernate-validator.version>
         <springdoc-openapi-starter-webmvc-ui.version>2.7.0</springdoc-openapi-starter-webmvc-ui.version>
         <sonar-maven-plugin.version>5.0.0.4389</sonar-maven-plugin.version>
+        <poi.version>5.2.3</poi.version>
+        <spring-boot-starter-aop.version>3.4.0</spring-boot-starter-aop.version>
     </properties>
 
     <!-- Dependencies -->
@@ -99,12 +101,18 @@
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
-            <version>5.2.3</version>
+            <version>${poi.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
-            <version>5.2.3</version>
+            <version>${poi.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+            <version>${spring-boot-starter-aop.version}</version>
         </dependency>
 
     </dependencies>

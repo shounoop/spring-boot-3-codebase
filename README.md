@@ -62,3 +62,4 @@ docker-compose up -d
 - [How to import data from Excel file in Spring Boot](https://springjava.com/spring-boot/how-to-import-data-from-excel-file-in-spring-boot)
 - [Export Data to Excel file in Spring Boot](https://springjava.com/spring-boot/export-data-to-excel-file-in-spring-boot)
 - [Logging With AOP in Spring](https://www.baeldung.com/spring-aspect-oriented-programming-logging)
+- [Using MapStruct With Lombok](https://www.baeldung.com/java-mapstruct-lombok)

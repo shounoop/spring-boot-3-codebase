@@ -1,5 +1,5 @@
 
-# Spring Boot 3 Codebase (In Progress)
+# Spring Boot 3 Codebase
 
 This repository contains a Spring Boot 3 codebase currently in development.
 

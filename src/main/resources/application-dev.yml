@@ -1,7 +1,7 @@
 spring:
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: create-drop
   datasource:
     url: jdbc:mysql://localhost:3306/test_codebase
     username: root

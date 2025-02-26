@@ -2,7 +2,7 @@ package com.codebase;
 
 import com.codebase.model.entity.Student;
 import com.codebase.repository.StudentRepository;
-import com.codebase.service.interfaces.FolderWatcherService;
+import com.codebase.service.FolderWatcherService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

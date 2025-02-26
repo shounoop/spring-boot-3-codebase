@@ -1,5 +1,6 @@
-package com.codebase.service.interfaces;
+package com.codebase.service.impl;
 
+import com.codebase.service.FolderWatcherService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -18,8 +19,8 @@ import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
  * Service to monitor a specific folder and log any newly added files.
  */
 @Service
-public class FolderWatcherService {
-    private static final Logger logger = LoggerFactory.getLogger(FolderWatcherService.class);
+public class FolderWatcherServiceImpl implements FolderWatcherService {
+    private static final Logger logger = LoggerFactory.getLogger(FolderWatcherServiceImpl.class);
 
     // Define the folder path to be monitored (Change this to your actual directory)
     private final Path folderPath = Paths.get("D:/test-monitor-folder");

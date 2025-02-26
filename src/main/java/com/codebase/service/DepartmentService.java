@@ -1,4 +1,4 @@
-package com.codebase.service.interfaces;
+package com.codebase.service;
 
 import com.codebase.model.entity.Department;
 

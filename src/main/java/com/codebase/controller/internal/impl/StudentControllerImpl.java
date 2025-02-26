@@ -1,13 +1,13 @@
 package com.codebase.controller.internal.impl;
 
 import com.codebase.component.response.ApiResponseFactory;
-import com.codebase.controller.internal.interfaces.StudentController;
+import com.codebase.controller.internal.StudentController;
 import com.codebase.enums.DomainCode;
 import com.codebase.exception.model.AppException;
 import com.codebase.model.dto.StudentDto;
 import com.codebase.model.response.ApiResponse;
-import com.codebase.service.interfaces.ExcelExportService;
-import com.codebase.service.interfaces.StudentService;
+import com.codebase.service.ExcelExportService;
+import com.codebase.service.StudentService;
 import com.codebase.util.ExcelUtility;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;

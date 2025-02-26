@@ -1,4 +1,4 @@
-package com.codebase.controller.internal.interfaces;
+package com.codebase.controller.internal;
 
 import com.codebase.model.entity.Department;
 import com.codebase.model.response.ApiResponse;

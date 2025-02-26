@@ -1,7 +1,7 @@
 package com.codebase.controller.internal.impl;
 
 import com.codebase.component.response.ApiResponseFactory;
-import com.codebase.controller.internal.interfaces.GreetingController;
+import com.codebase.controller.internal.GreetingController;
 import com.codebase.model.response.ApiResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

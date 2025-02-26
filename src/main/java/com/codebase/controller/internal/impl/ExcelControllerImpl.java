@@ -1,12 +1,12 @@
 package com.codebase.controller.internal.impl;
 
 import com.codebase.component.response.ApiResponseFactory;
-import com.codebase.controller.internal.interfaces.ExcelController;
+import com.codebase.controller.internal.ExcelController;
 import com.codebase.enums.DomainCode;
 import com.codebase.exception.model.AppException;
 import com.codebase.model.dto.StudentDto;
 import com.codebase.model.response.ApiResponse;
-import com.codebase.service.interfaces.ExcelService;
+import com.codebase.service.ExcelService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestParam;

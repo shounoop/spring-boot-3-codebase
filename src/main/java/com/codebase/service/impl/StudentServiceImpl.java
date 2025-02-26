@@ -6,7 +6,7 @@ import com.codebase.model.dto.StudentDto;
 import com.codebase.model.entity.Student;
 import com.codebase.model.mapper.StudentMapper;
 import com.codebase.repository.StudentRepository;
-import com.codebase.service.interfaces.StudentService;
+import com.codebase.service.StudentService;
 import com.codebase.util.ExcelUtility;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -67,3 +67,4 @@ docker-compose up -d
 ## Todo
 - Add base entity, base controller, base service, common mapper
 - Handle exporting Excel file concurrently using CompletableFuture (CompletableFuture in Spring Boot is part of Java's java.util.concurrent package and provides a powerful way to handle asynchronous programming. It allows running tasks in parallel, combining multiple asynchronous operations, and handling their results when they complete)
+- Using Keycloak with Spring Boot

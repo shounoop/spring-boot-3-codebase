@@ -72,7 +72,7 @@ docker-compose up -d
 - Socket.IO, MQTT
 - MinIO
 - Caching (Redis, Memcached)
-- Message queue (ActiveMQ, Kafka)
+- Message queue (Kafka, RabbitMQ, ActiveMQ)
 - Unit testing
 - Docx4java
 - Monitoring & Logging using Prometheus, ELK Stack, Grafana

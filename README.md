@@ -76,3 +76,4 @@ docker-compose up -d
 - Unit testing
 - Docx4java
 - Monitoring & Logging using Prometheus, ELK Stack, Grafana
+- Enable CORS

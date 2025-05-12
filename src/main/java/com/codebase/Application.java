@@ -1,7 +1,8 @@
 package com.codebase;
 
-import com.codebase.model.entity.Student;
-import com.codebase.repository.StudentRepository;
+import com.codebase.model.primary.entity.Student;
+import com.codebase.model.second.entity.SecondEntity;
+import com.codebase.repository.primary.StudentRepository;
 import com.codebase.service.FolderWatcherService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
@@ -17,6 +18,8 @@ import java.util.stream.IntStream;
 public class Application implements CommandLineRunner {
 
     private final FolderWatcherService folderWatcherService;
+
+    private final SecondEntity secondEntity;
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);

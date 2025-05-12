@@ -2,8 +2,8 @@ package com.codebase.controller.internal.impl;
 
 import com.codebase.component.response.ApiResponseFactory;
 import com.codebase.controller.internal.DepartmentController;
-import com.codebase.model.entity.Department;
-import com.codebase.model.response.ApiResponse;
+import com.codebase.model.primary.entity.Department;
+import com.codebase.model.primary.response.ApiResponse;
 import com.codebase.service.DepartmentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

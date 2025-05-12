@@ -1,4 +1,4 @@
-package com.codebase.model.request;
+package com.codebase.model.primary.request;
 
 import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.Min;

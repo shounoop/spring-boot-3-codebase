@@ -1,6 +1,6 @@
 package com.codebase.service;
 
-import com.codebase.model.entity.Department;
+import com.codebase.model.primary.entity.Department;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.codebase.service.impl;
 
-import com.codebase.model.dto.StudentDto;
+import com.codebase.model.primary.dto.StudentDto;
 import com.codebase.service.ExcelExportService;
 import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServletResponse;

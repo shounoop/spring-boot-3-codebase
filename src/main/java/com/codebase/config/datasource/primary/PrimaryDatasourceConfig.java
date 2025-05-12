@@ -1,4 +1,4 @@
-package com.codebase.config.datasource;
+package com.codebase.config.datasource.primary;
 
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;

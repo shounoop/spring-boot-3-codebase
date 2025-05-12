@@ -1,6 +1,6 @@
 package com.codebase.controller.internal;
 
-import com.codebase.model.response.ApiResponse;
+import com.codebase.model.primary.response.ApiResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

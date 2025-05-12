@@ -2,8 +2,8 @@ package com.codebase.controller.internal.impl;
 
 import com.codebase.component.response.ApiResponseFactory;
 import com.codebase.controller.internal.TestValidationController;
-import com.codebase.model.request.TestValidationRequest;
-import com.codebase.model.response.ApiResponse;
+import com.codebase.model.primary.request.TestValidationRequest;
+import com.codebase.model.primary.response.ApiResponse;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;

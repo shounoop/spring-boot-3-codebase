@@ -1,6 +1,6 @@
 package com.codebase.controller.internal;
 
-import com.codebase.model.response.ApiResponse;
+import com.codebase.model.primary.response.ApiResponse;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

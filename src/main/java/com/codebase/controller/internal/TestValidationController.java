@@ -1,7 +1,7 @@
 package com.codebase.controller.internal;
 
-import com.codebase.model.request.TestValidationRequest;
-import com.codebase.model.response.ApiResponse;
+import com.codebase.model.primary.request.TestValidationRequest;
+import com.codebase.model.primary.response.ApiResponse;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,4 +1,4 @@
-package com.codebase.model.dto;
+package com.codebase.model.primary.dto;
 
 import lombok.Data;
 

@@ -2,8 +2,8 @@ package com.codebase.service.impl;
 
 import com.codebase.enums.DomainCode;
 import com.codebase.exception.model.AppException;
-import com.codebase.model.entity.Department;
-import com.codebase.repository.DepartmentRepository;
+import com.codebase.model.primary.entity.Department;
+import com.codebase.repository.primary.DepartmentRepository;
 import com.codebase.service.DepartmentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

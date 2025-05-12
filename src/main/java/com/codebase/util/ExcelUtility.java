@@ -2,7 +2,7 @@ package com.codebase.util;
 
 import com.codebase.enums.DomainCode;
 import com.codebase.exception.model.AppException;
-import com.codebase.model.dto.StudentDto;
+import com.codebase.model.primary.dto.StudentDto;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;

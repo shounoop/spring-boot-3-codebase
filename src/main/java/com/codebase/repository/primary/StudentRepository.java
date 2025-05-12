@@ -1,6 +1,6 @@
-package com.codebase.repository;
+package com.codebase.repository.primary;
 
-import com.codebase.model.entity.Student;
+import com.codebase.model.primary.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

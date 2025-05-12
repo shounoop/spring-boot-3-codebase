@@ -1,6 +1,6 @@
 package com.codebase.service.impl;
 
-import com.codebase.model.dto.StudentDto;
+import com.codebase.model.primary.dto.StudentDto;
 import com.codebase.service.ExcelService;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;

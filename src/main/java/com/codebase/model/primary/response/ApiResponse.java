@@ -1,6 +1,6 @@
-package com.codebase.model.response;
+package com.codebase.model.primary.response;
 
-import com.codebase.model.dto.FieldErrorDto;
+import com.codebase.model.primary.dto.FieldErrorDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

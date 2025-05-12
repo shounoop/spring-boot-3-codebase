@@ -1,8 +1,9 @@
 package com.codebase.model.mapper;
 
-import com.codebase.model.dto.LombokDestination;
-import com.codebase.model.dto.SimpleDestination;
-import com.codebase.model.dto.SimpleSource;
+import com.codebase.model.primary.dto.LombokDestination;
+import com.codebase.model.primary.dto.SimpleDestination;
+import com.codebase.model.primary.dto.SimpleSource;
+import com.codebase.model.primary.mapper.LombokMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;

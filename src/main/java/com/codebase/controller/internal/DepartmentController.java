@@ -1,7 +1,7 @@
 package com.codebase.controller.internal;
 
-import com.codebase.model.entity.Department;
-import com.codebase.model.response.ApiResponse;
+import com.codebase.model.primary.entity.Department;
+import com.codebase.model.primary.response.ApiResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

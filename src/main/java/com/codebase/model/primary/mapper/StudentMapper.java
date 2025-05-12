@@ -1,7 +1,7 @@
-package com.codebase.model.mapper;
+package com.codebase.model.primary.mapper;
 
-import com.codebase.model.dto.StudentDto;
-import com.codebase.model.entity.Student;
+import com.codebase.model.primary.dto.StudentDto;
+import com.codebase.model.primary.entity.Student;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

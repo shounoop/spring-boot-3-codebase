@@ -2,7 +2,7 @@ package com.codebase.exception.controller.advice;
 
 import com.codebase.component.response.ApiResponseFactory;
 import com.codebase.exception.model.AppException;
-import com.codebase.model.response.ApiResponse;
+import com.codebase.model.primary.response.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;

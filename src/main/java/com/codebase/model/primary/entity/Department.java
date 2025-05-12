@@ -1,4 +1,4 @@
-package com.codebase.model.entity;
+package com.codebase.model.primary.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

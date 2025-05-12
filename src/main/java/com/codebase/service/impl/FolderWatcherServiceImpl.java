@@ -31,7 +31,7 @@ public class FolderWatcherServiceImpl implements FolderWatcherService {
     public void startWatching() {
         Thread thread = new Thread(this::watchFolder);
         thread.setDaemon(true); // Ensures it stops when the app stops
-        thread.start();
+//        thread.start();
     }
 
     /**

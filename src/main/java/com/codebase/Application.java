@@ -9,12 +9,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.util.List;
 import java.util.stream.IntStream;
 
 @SpringBootApplication
 @RequiredArgsConstructor
+@EnableScheduling
 public class Application implements CommandLineRunner {
 
     private final FolderWatcherService folderWatcherService;

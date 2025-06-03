@@ -32,7 +32,7 @@ public class OpenApiConfig {
         prodServer.setDescription("Server URL in Production environment");
 
         Contact contact = new Contact();
-        contact.setEmail("tuanhm1@abbank.vn");
+        contact.setEmail("hmt@gmail.com");
         contact.setName("Hoang Minh Tuan");
 
         License mitLicense = new License().name("MIT License").url("https://choosealicense.com/licenses/mit");

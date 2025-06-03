@@ -9,6 +9,7 @@ import java.util.Locale;
 
 @RequestMapping("/api/v1/greeting")
 public interface GreetingController {
+
     @GetMapping("/")
     ResponseEntity<ApiResponse> getGreeting(Locale locale);
 }

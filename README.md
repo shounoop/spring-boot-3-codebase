@@ -101,7 +101,6 @@ docker-compose up -d
 - [Using MapStruct With Lombok](https://www.baeldung.com/java-mapstruct-lombok)
 
 ## Todo
-<<<<<<< HEAD
 - Implement base entity, base controller, base service, and common mapper for code reusability.
 - Enable concurrent Excel file export using CompletableFuture for efficient asynchronous processing.
 - Integrate a custom executor (ThreadPoolTaskExecutor) with Spring Boot's @Async for advanced async task management.
@@ -119,17 +118,3 @@ docker-compose up -d
 Contributions are welcome! Please open issues or submit pull requests for improvements, bug fixes, or new features.
 
 ---
-=======
-- Add base entity, base controller, base service, common mapper
-- Handle exporting Excel file concurrently using CompletableFuture (CompletableFuture in Spring Boot is part of Java's java.util.concurrent package and provides a powerful way to handle asynchronous programming. It allows running tasks in parallel, combining multiple asynchronous operations, and handling their results when they complete)
-- Custom Executor (ThreadPoolTaskExecutor) with Spring Boot Async
-- Using Keycloak with Spring Boot
-- Socket.IO, MQTT
-- MinIO
-- Caching (Redis, Memcached)
-- Message queue (Kafka, RabbitMQ, ActiveMQ)
-- Unit testing
-- Docx4java
-- Monitoring & Logging using Prometheus, ELK Stack, Grafana
-- Enable CORS
->>>>>>> e18b1f347a803445457cae5e445896e21f8d6268

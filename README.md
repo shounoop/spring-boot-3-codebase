@@ -1,14 +1,14 @@
-# Spring Boot 3 Codebase
+# Spring Boot 3 Template
 
 A modern, extensible Spring Boot 3 project template with advanced features for scalable enterprise applications.
 
 ---
 
 ## Table of Contents
-- [Spring Boot 3 Codebase](#spring-boot-3-codebase)
+- [Spring Boot 3 Template](#spring-boot-3-template)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
-  - [Features](#features)
+  - [Implemented Features](#implemented-features)
   - [Project Setup](#project-setup)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
@@ -16,7 +16,6 @@ A modern, extensible Spring Boot 3 project template with advanced features for s
     - [Using Maven](#using-maven)
     - [Using Java](#using-java)
     - [Using Docker Compose](#using-docker-compose)
-  - [Implemented Features](#implemented-features)
   - [References](#references)
   - [Todo](#todo)
   - [Contributing](#contributing)
@@ -26,8 +25,8 @@ A modern, extensible Spring Boot 3 project template with advanced features for s
 ## Overview
 This repository provides a robust starting point for Spring Boot 3 projects, including multi-database support, advanced transaction management, real-time capabilities, and best practices for modern Java development.
 
-## Features
-- Multi-database configuration and multiple transaction managers
+## Implemented Features
+- Multi-database configuration and multiple transaction managers (support for connecting and managing more than one database, handling transactions across multiple databases)
 - Real-time integration with Firebase
 - Base entity, base controller, base service, and common mapper for code reusability
 - Spring Data JPA for data access
@@ -53,7 +52,7 @@ This repository provides a robust starting point for Spring Boot 3 projects, inc
 ### Installation
 1. Clone the repository:
    ```shell
-   git clone <your-repo-url>
+   git clone https://github.com/shounoop/springboot3-template.git
    cd codebase-spring-boot-3
    ```
 2. Configure your database(s) and environment variables as needed in `src/main/resources/application.yml`.
@@ -74,20 +73,6 @@ java -jar target/spring-boot-3-0.0.1-SNAPSHOT.jar
 ```shell
 docker-compose up -d
 ```
-
-## Implemented Features
-- Configured multiple databases (support for connecting and managing more than one database)
-- Configured multiple transaction managers (handling transactions across multiple databases)
-- Integrated Firebase for real-time features
-- Set up base entity, base controller, base service, and common mapper
-- Integrated MapStruct with Lombok
-- Set up Swagger/OpenAPI documentation
-- Integrated SonarQube for code quality analysis
-- Implemented validation with Jakarta Validation API and Hibernate Validator
-- Configured Spring Security for authentication and authorization
-- Set up Docker and Docker Compose for containerization
-- Added Spring Boot DevTools for development experience
-- Added Spring Boot Actuator for monitoring
 
 ## References
 - [How to Implement Internationalization (i18n) in Spring Boot](https://medium.com/@AlexanderObregon/how-to-implement-internationalization-i18n-in-spring-boot-aea2c62c1bfa)

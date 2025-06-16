@@ -98,6 +98,8 @@ docker-compose up -d
 - Add support for DOCX file manipulation using Docx4j.
 - Set up monitoring and logging with Prometheus, ELK Stack, and Grafana.
 - Enable and configure CORS for cross-origin requests.
+- Export word with template using docx4j
+- Swagger: Strategies for microservices
 
 ## Contributing
 Contributions are welcome! Please open issues or submit pull requests for improvements, bug fixes, or new features.
